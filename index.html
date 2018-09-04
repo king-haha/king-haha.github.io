@@ -1,12 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-size: 62.5% ;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>二哈</title>
+    <title>jahsdjkjas</title>
+    <style>
+        body {
+            background-color: yellowgreen;
+        }
+
+        #box {
+            font-size: 2rem;
+            /* font-size: 12px; */
+        }
+
+        @media only screen and (min-width: 320px) {
+            html {
+                font-size: 62.5% !important;
+            }
+        }
+
+        @media only screen and (min-width: 640px) {
+            html {
+                font-size: 125% !important;
+            }
+        }
+
+        @media only screen and (min-width: 750px) {
+            html {
+                font-size: 150% !important;
+            }
+        }
+
+        @media only screen and (min-width: 1242px) {
+            html {
+                font-size: 187.5% !important;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <div>私人博客</div>
+    <div id="box">私人博客</div>
+    <div class="rem">
+        <h3>rem</h3>
+        <pre>
+    <span style="color: #008080;"> 1</span> <span style="color: #000000;">@media only screen and (min-width: 320px){</span>
+    <span style="color: #008080;"> 2</span> <span style="color: #000000;">  html {</span>
+    <span style="color: #008080;"> 3</span> <span style="color: #000000;">    font-size: 62.5% !important;</span>
+    <span style="color: #008080;"> 4</span> <span style="color: #000000;">  }</span>
+    <span style="color: #008080;"> 5</span> <span style="color: #000000;">}</span>
+    <span style="color: #008080;"> 6</span> <span style="color: #000000;">@media only screen and (min-width: 640px){</span>
+    <span style="color: #008080;"> 7</span> <span style="color: #000000;">  html {</span>
+    <span style="color: #008080;"> 8</span> <span style="color: #000000;">    font-size: 125% !important;</span>
+    <span style="color: #008080;"> 9</span> <span style="color: #000000;">  }</span>
+    <span style="color: #008080;">10</span> <span style="color: #000000;">}</span>
+    <span style="color: #008080;">11</span> <span style="color: #000000;">@media only screen and (min-width: 750px){</span>
+    <span style="color: #008080;">12</span> <span style="color: #000000;">  html {</span>
+    <span style="color: #008080;">13</span> <span style="color: #000000;">    font-size: 150% !important;</span>
+    <span style="color: #008080;">14</span> <span style="color: #000000;">  }</span>
+    <span style="color: #008080;">15</span> <span style="color: #000000;">}</span>
+    <span style="color: #008080;">16</span> <span style="color: #000000;">@media only screen and (min-width: 1242px){</span>
+    <span style="color: #008080;">17</span> <span style="color: #000000;">  html {</span>
+    <span style="color: #008080;">18</span> <span style="color: #000000;">    font-size: 187.5% !important;</span>
+    <span style="color: #008080;">19</span> <span style="color: #000000;">  }</span>
+    <span style="color: #008080;">20</span> }
+        </pre>
+    </div>
+
 </body>
+<script>
+    var width123 = document.documentElement.getBoundingClientRect().left;
+    // alert(width123);
+
+    console.log(document.documentElement.clientTop); // 非IE为0，IE为2
+
+    console.log(document.documentElement.clientLeft); // 非IE为0，IE为2
+
+    let box = document.getElementById('box');
+
+    // console.log(box);
+
+    function gGetRect(element) {
+
+        var rect = element.getBoundingClientRect();
+
+        var top = document.documentElement.clientTop;
+
+        var left = document.documentElement.clientLeft;
+
+        // console.log(left);
+
+        return obj = {
+
+            top: rect.top - top,
+
+            bottom: rect.bottom - top,
+
+            left: rect.left - left,
+
+            right: rect.right - left
+
+        }
+    }
+
+    gGetRect(box);
+
+    console.log(document.documentElement.clientWidth);
+    console.log(document.documentElement.getBoundingClientRect().width);
+    console.log(document.documentElement);
+</script>
+
 </html>
